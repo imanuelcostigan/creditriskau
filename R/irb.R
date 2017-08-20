@@ -17,7 +17,8 @@
 #'   institution with total assets greater than A$100bn or in an unregulated
 #'   financial institution. Otherwise is `FALSE`. See 113.B.77(a) and
 #'   113.B.77(b)
-#' @return a vector of capital requirement ratios subject to a floor of zero
+#' @return a vector of capital requirement ratios subject to a floor of zero.
+#' Note this assumes a Prudential Capital Ratio of 0.08
 #' @examples
 #' non_retail_capital(0.05, 0.45, 3, 100, FALSE)
 #' non_retail_capital(c(0.05, 0.70), 0.45, 3, 100, FALSE)

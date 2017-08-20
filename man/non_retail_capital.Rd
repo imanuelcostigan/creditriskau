@@ -26,7 +26,8 @@ financial institution. Otherwise is \code{FALSE}. See 113.B.77(a) and
 113.B.77(b)}
 }
 \value{
-a vector of capital requirement ratios subject to a floor of zero
+a vector of capital requirement ratios subject to a floor of zero.
+Note this assumes a Prudential Capital Ratio of 0.08
 }
 \description{
 This calculates the capital requirements of corporate, bank and sovereign
