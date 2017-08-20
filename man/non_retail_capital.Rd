@@ -7,9 +7,9 @@
 non_retail_capital(pd, lgd, size, maturity, is_riskier_fi)
 }
 \arguments{
-\item{pd}{the probability of default expressed as a decimal. It is assumed
-that these are already floored to 0.0003 for corporate and bank exposures
-(B.2)}
+\item{pd}{the probability of default expressed as a decimal between 0 and 1
+(exclusive). It is assumed that these are already floored to 0.0003 for
+corporate and bank exposures (B.2).}
 
 \item{lgd}{the loss given default expressed as a decimal. It is assumed that
 any applicable floors have already been applied.}

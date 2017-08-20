@@ -4,9 +4,9 @@
 #' exposures that are not specialised lending exposures subject to the slotting
 #' approach. All inputs are vectors and whose values are recycled if necessary.
 #'
-#' @param pd the probability of default expressed as a decimal. It is assumed
-#'   that these are already floored to 0.0003 for corporate and bank exposures
-#'   (B.2)
+#' @param pd the probability of default expressed as a decimal between 0 and 1
+#'   (exclusive). It is assumed that these are already floored to 0.0003 for
+#'   corporate and bank exposures (B.2).
 #' @param lgd the loss given default expressed as a decimal. It is assumed that
 #'   any applicable floors have already been applied.
 #' @param maturity the effective maturity expressed in years. It is assumed that
