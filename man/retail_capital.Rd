@@ -31,3 +31,6 @@ retail_capital(0.04, 0.20, "mortgage")
 retail_capital(0.04, 0.20, "qrr")
 retail_capital(0.04, 0.20, "other")
 }
+\references{
+\href{https://www.legislation.gov.au/Details/F2012L02329}{APS 113}
+}

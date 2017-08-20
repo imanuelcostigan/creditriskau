@@ -21,6 +21,8 @@
 #' @examples
 #' non_retail_capital(0.05, 0.45, 3, 100, FALSE)
 #' non_retail_capital(c(0.05, 0.70), 0.45, 3, 100, FALSE)
+#' @references
+#' [APS 113](https://www.legislation.gov.au/Details/F2012L02329)
 #' @export
 non_retail_capital <- function (pd, lgd, size, maturity, is_riskier_fi) {
   # Correlation factor, B.77
@@ -43,7 +45,7 @@ non_retail_capital <- function (pd, lgd, size, maturity, is_riskier_fi) {
 #' residential mortgages, qualifying revolving retail and SME Retail (other).
 #' All inputs are vectors and whose values are recycled if necessary.
 #'
-#' @inherit non_retail_capital
+#' @inherit non_retail_capital params references
 #' @param sub_class the sub-class of the retail IRB asset class. Can be one of
 #'   the following: `mortgage`, `qrr` (qualified revolving retail) and `other`
 #'   (e.g. personal lending and small business exposures)

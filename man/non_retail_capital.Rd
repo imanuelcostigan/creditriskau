@@ -37,3 +37,6 @@ approach. All inputs are vectors and whose values are recycled if necessary.
 non_retail_capital(0.05, 0.45, 3, 100, FALSE)
 non_retail_capital(c(0.05, 0.70), 0.45, 3, 100, FALSE)
 }
+\references{
+\href{https://www.legislation.gov.au/Details/F2012L02329}{APS 113}
+}
