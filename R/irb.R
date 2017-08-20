@@ -69,6 +69,23 @@ retail_capital <- function(pd, lgd, sub_class) {
 }
 
 
+#' Slotted specialised lending exposure capital
+#'
+#' This calculates the capital requirements of specialised lending exposures
+#' subject to slotting.
+#'
+#' @inherit non_retail_capital return
+#' @param category the slotting category must be one of the following values:
+#' `strong`, `good`, `satisfactory`, `weak`, `default`
+#' @examples
+#' slotting_capital(c("strong", "weak"))
+#' @export
+slotting_capital <- function(category) {
+  rw <- c("strong" = 0.7, "good" = 0.9, "satisfactory" = 1.15, "weak" = 2.5,
+    "default" = 0)
+  unname(rw[match(category, names(rw))]) * 0.08
+}
+
 ul <- function(pd, lgd, R, maturity_adjustment = NULL) {
   q <- (stats::qnorm(pd) + sqrt(R) * stats::qnorm(0.999)) / sqrt(1 - R)
   (stats::pnorm(q) - pd) * lgd * (maturity_adjustment %||% 1)

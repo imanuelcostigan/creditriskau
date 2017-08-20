@@ -2,3 +2,4 @@
 
 export(non_retail_capital)
 export(retail_capital)
+export(slotting_capital)
