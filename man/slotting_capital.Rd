@@ -21,3 +21,7 @@ subject to slotting.
 \examples{
 slotting_capital(c("strong", "weak"))
 }
+\seealso{
+Other APS113 functions: \code{\link{non_retail_capital}},
+  \code{\link{retail_capital}}
+}

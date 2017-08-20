@@ -25,6 +25,7 @@
 #' @references
 #' [APS 113](https://www.legislation.gov.au/Details/F2012L02329)
 #' @export
+#' @family APS113 functions
 non_retail_capital <- function (pd, lgd, size, maturity, is_riskier_fi) {
   # Correlation factor, B.77
   R <- 0.24 - 0.12 * (1 - exp(-50 * pd)) / (1 - exp(-50)) -
@@ -56,6 +57,7 @@ non_retail_capital <- function (pd, lgd, size, maturity, is_riskier_fi) {
 #' retail_capital(0.04, 0.20, "qrr")
 #' retail_capital(0.04, 0.20, "other")
 #' @export
+#' @family APS113 functions
 retail_capital <- function(pd, lgd, sub_class) {
   assertthat::assert_that(all(sub_class %in% c("mortgage", "qrr", "other")))
   R <- vector("numeric", max(length(pd), length(lgd), length(sub_class)))
@@ -80,6 +82,7 @@ retail_capital <- function(pd, lgd, sub_class) {
 #' @examples
 #' slotting_capital(c("strong", "weak"))
 #' @export
+#' @family APS113 functions
 slotting_capital <- function(category) {
   rw <- c("strong" = 0.7, "good" = 0.9, "satisfactory" = 1.15, "weak" = 2.5,
     "default" = 0)

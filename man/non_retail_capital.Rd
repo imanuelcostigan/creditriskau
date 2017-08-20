@@ -41,3 +41,7 @@ non_retail_capital(c(0.05, 0.70), 0.45, 3, 100, FALSE)
 \references{
 \href{https://www.legislation.gov.au/Details/F2012L02329}{APS 113}
 }
+\seealso{
+Other APS113 functions: \code{\link{retail_capital}},
+  \code{\link{slotting_capital}}
+}
