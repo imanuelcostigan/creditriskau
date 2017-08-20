@@ -1,0 +1,15 @@
+Package: creditriskr
+Title: Credit Risk Capital Tools
+Version: 0.0.99
+Authors@R: person("Imanuel", "Costigan", email = "i.costigan@me.com", 
+                  role = c("aut", "cre"))
+Description: Determine credit risk capital related quantities.
+Depends: R (>= 3.4.1)
+Roxygen: list(markdown = TRUE)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: assertthat,
+    stats
+RoxygenNote: 6.0.1
+Suggests: testthat
