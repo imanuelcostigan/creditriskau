@@ -7,7 +7,7 @@ You will be able to calculated credit risk capital related quantities using this
 Retail exposures
 ----------------
 
-The following illustrates the capital ratios associated with exposures with different credit risk characteristics.
+The following illustrates the capital ratios associated with retail exposures with different credit risk characteristics.
 
 ``` r
 library(tidyverse)
@@ -38,6 +38,8 @@ ggplot(df, aes(x = pd, y = k, colour = sub_class)) +
 Non-retail exposures
 --------------------
 
+The following illustrates the capital ratios associated with non-retail exposures with different credit risk characteristics.
+
 ``` r
 size <- rep(c(1, 10, 100), each = length(x))
 k <- non_retail_capital(pd, lgd, size, 1, FALSE)
@@ -49,3 +51,5 @@ ggplot(df, aes(x = pd, y = k, colour = as.character(size))) +
 ```
 
 ![](README-non_retail_example-1.png)
+
+Capital ratios for specialised lending facilities subject to slotting can be accessed using the `slotting_capital()` function.
