@@ -47,7 +47,7 @@ df <- tibble(pd, lgd, size, k)
 ggplot(df, aes(x = pd, y = k, colour = as.character(size))) + 
   geom_point() +
   theme_minimal() +
-  labs(x = "PD", y = "Capital ratio", colour = "Size")
+  labs(x = "PD", y = "Capital ratio", colour = "Size (A$m)")
 ```
 
 ![](README-non_retail_example-1.png)
