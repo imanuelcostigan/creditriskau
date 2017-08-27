@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# creditriskau - Credit Risk Capital Tools for Australia
+# creditriskau - Australian credit risk capital tools
 
 You will be able to calculated credit risk capital related quantities using this package. These reflect the standards outlined in [APRA's credit risk prudential standards](http://www.apra.gov.au/adi/PrudentialFramework/Pages/prudential-standards-and-guidance-notes-for-adis.aspx), and consequently reflects the Australian implementation of the [Basel III capital standards](http://www.bis.org/bcbs/basel3.htm). 
 
