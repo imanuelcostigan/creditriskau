@@ -1,9 +1,13 @@
-Package: creditriskr
-Title: Credit Risk Capital Tools
+Package: creditriskau
+Title: Credit Risk Capital Tools for Australia
 Version: 0.0.99
 Authors@R: person("Imanuel", "Costigan", email = "i.costigan@me.com", 
                   role = c("aut", "cre"))
-Description: Determine credit risk capital related quantities.
+Description: Determine credit risk capital related quantities in accordance
+  Australian Prudential Standards ('APS') published by the Australian Prudential 
+  Regulation Authority ('APRA'). This includes risk weighting functions under 
+  the Internal Ratings Based (IRB) approaches to credit risk (APS 113) and 
+  regulatory capital calculations for counterparty credit risk (APS 180).
 Depends: R (>= 3.4.1)
 Roxygen: list(markdown = TRUE)
 License: MIT + file LICENSE

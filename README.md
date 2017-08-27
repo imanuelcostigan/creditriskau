@@ -1,8 +1,8 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-creditriskr - Credit Risk Capital Tools
-=======================================
+creditriskau - Credit Risk Capital Tools for Australia
+======================================================
 
-You will be able to calculated credit risk capital related quantities using this package. These reflect the standards outlined in [APRA's credit risk prudential standards](http://www.apra.gov.au/adi/PrudentialFramework/Pages/prudential-standards-and-guidance-notes-for-adis.aspx), and consequently reflects the Australian implementation of the Basel III capital standards.
+You will be able to calculated credit risk capital related quantities using this package. These reflect the standards outlined in [APRA's credit risk prudential standards](http://www.apra.gov.au/adi/PrudentialFramework/Pages/prudential-standards-and-guidance-notes-for-adis.aspx), and consequently reflects the Australian implementation of the [Basel III capital standards](http://www.bis.org/bcbs/basel3.htm).
 
 Retail exposures
 ----------------
@@ -20,7 +20,7 @@ library(tidyverse)
 #> Conflicts with tidy packages ----------------------------------------------
 #> filter(): dplyr, stats
 #> lag():    dplyr, stats
-library(creditriskr)
+library(creditriskau)
 x <- seq(0.01, 0.99, by = 0.03)
 pd <- rep(x, 3)
 lgd <- 0.20
@@ -53,3 +53,8 @@ ggplot(df, aes(x = pd, y = k, colour = as.character(size))) +
 ![](README-non_retail_example-1.png)
 
 Capital ratios for specialised lending facilities subject to slotting can be accessed using the `slotting_capital()` function.
+
+Counterparty credit risk exposures
+----------------------------------
+
+To be completed.

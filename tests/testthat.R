@@ -1,4 +1,4 @@
 library(testthat)
-library(creditriskr)
+library(creditriskau)
 
-test_check("creditriskr")
+test_check("creditriskau")
