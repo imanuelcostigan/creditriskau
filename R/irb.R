@@ -94,7 +94,7 @@ retail_capital <- function(pd, lgd, sub_class, correlation = NA) {
 slotting_capital <- function(category) {
   rw <- c("strong" = 0.7, "good" = 0.9, "satisfactory" = 1.15, "weak" = 2.5,
     "default" = 0)
-  unname(rw[match(category, names(rw))]) * 0.08
+  (category %=>% rw) * 0.08
 }
 
 ul <- function(pd, lgd, R, maturity_adjustment = NULL) {
