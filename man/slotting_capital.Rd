@@ -21,6 +21,9 @@ subject to slotting.
 \examples{
 slotting_capital(c("strong", "weak"))
 }
+\references{
+\href{https://www.legislation.gov.au/Details/F2012L02329}{APS 113}
+}
 \seealso{
 Other APS113 functions: \code{\link{non_retail_capital}},
   \code{\link{retail_capital}}

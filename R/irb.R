@@ -84,7 +84,7 @@ retail_capital <- function(pd, lgd, sub_class, correlation = NA) {
 #' This calculates the capital requirements of specialised lending exposures
 #' subject to slotting.
 #'
-#' @inherit non_retail_capital return
+#' @inherit non_retail_capital return references
 #' @param category the slotting category must be one of the following values:
 #' `strong`, `good`, `satisfactory`, `weak`, `default`
 #' @examples

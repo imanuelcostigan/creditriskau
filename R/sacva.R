@@ -43,6 +43,8 @@
 #' @return the CVA capital charge for the counterparty or an error if an invalid
 #'   argument values are supplied.
 #' @export
+#' @family APS180 functions
+#' @references [APS 180](http://www.apra.gov.au/adi/PrudentialFramework/Documents/APS-180.pdf)
 #' @examples
 #' # Single counterparty
 #' cva_capital(1, 2.3, 1e6, 0.8)

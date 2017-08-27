@@ -74,3 +74,6 @@ cva_capital(c(1, 2), c(1, 0.5), c(100, 8000))
 cva_capital(c(2, 3), c(1, 0.5), c(100, 8000), NULL,
   c(1, 0.5), c(50, 1000), NULL, 1, 1, 2000, NULL)
 }
+\references{
+\href{http://www.apra.gov.au/adi/PrudentialFramework/Documents/APS-180.pdf}{APS 180}
+}
