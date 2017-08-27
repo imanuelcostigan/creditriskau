@@ -3,3 +3,4 @@
 ^tests/*.xlsx$
 ^README\.Rmd$
 ^README-.*\.png$
+^data-raw$
