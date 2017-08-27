@@ -15,5 +15,7 @@ test_that("Retail capital ratios are correct", {
     0.0214345101785415, 0.104400546577197, 0.00064614706087279,
     0.0325494930426509, 0.0537193288676191, 0.0003535564621715)
   expect_equal(retail_capital(pds, lgds, sub_classes), kk)
+  expect_equal(retail_capital(pds[1], lgds[1], sub_classes[1], c(mortgage = 0.15)),
+    0.0200529513109492)
 })
 

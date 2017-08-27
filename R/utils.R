@@ -3,6 +3,10 @@
   if (is.null(x)) y else x
 }
 
+`%<>%` <- function(x, y) {
+  if (is.na(x)) y else x
+}
+
 `%=>%` <- function(from, dictionary) {
   indices <- match(from, names(dictionary))
   unname(dictionary[indices])

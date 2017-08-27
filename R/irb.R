@@ -44,29 +44,37 @@ non_retail_capital <- function (pd, lgd, size, maturity, is_riskier_fi) {
 #' Retail exposure capital requirements
 #'
 #' This calculates the capital requirements of retail exposures including
-#' residential mortgages, qualifying revolving retail and SME Retail (other).
-#' All inputs are vectors and whose values are recycled if necessary.
+#' residential mortgages, qualifying revolving retail and others. All inputs are
+#' vectors and whose values are recycled if necessary.
 #'
 #' @inherit non_retail_capital params references
 #' @param sub_class the sub-class of the retail IRB asset class. Can be one of
 #'   the following: `mortgage`, `qrr` (qualified revolving retail) and `other`
 #'   (e.g. personal lending and small business exposures)
+#' @param correlation the asset correlation factor. Defaults to 15\%, 4\% and
+#'   the APS prescribed formula (APS 113, Att. C, para. 37) for `mortgage`,
+#'   `qrr` and `other` aub-asset classes respectively. These can be overridden by
+#'   supplying a numeric vector with alternate values where the names
+#'   correspond to any of `mortgage`, `qrr` or `other`.
 #' @return a vector of capital requirement ratios
 #' @examples
 #' retail_capital(0.04, 0.20, "mortgage")
 #' retail_capital(0.04, 0.20, "qrr")
 #' retail_capital(0.04, 0.20, "other")
+#' retail_capital(0.04, 0.20, "mortgage", c(mortgage = 0.25))
+#' retail_capital(0.04, 0.20 , c("mortgage", "qrr"), c(mortgage = 0.25))
 #' @export
 #' @family APS113 functions
-retail_capital <- function(pd, lgd, sub_class) {
+retail_capital <- function(pd, lgd, sub_class, correlation = NA) {
   assertthat::assert_that(all(sub_class %in% c("mortgage", "qrr", "other")))
   R <- vector("numeric", max(length(pd), length(lgd), length(sub_class)))
   is_mortgage <- sub_class == "mortgage"
   is_qrr <- sub_class == "qrr"
   is_other <- sub_class == "other"
-  R[is_mortgage] <- 0.15
-  R[is_qrr] <- 0.04
-  R[is_other] <- 0.16 - 0.13 * (1 - exp(-35 * pd[is_other])) / (1 - exp(-35))
+  R[is_mortgage] <- correlation["mortgage"] %<>% 0.15
+  R[is_qrr] <- correlation["qrr"] %<>% 0.04
+  R[is_other] <- correlation["other"] %<>%
+    (0.16 - 0.13 * (1 - exp(-35 * pd[is_other])) / (1 - exp(-35)))
   ul(pd, lgd, R, NULL)
 }
 

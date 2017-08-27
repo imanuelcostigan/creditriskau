@@ -4,7 +4,7 @@
 \alias{retail_capital}
 \title{Retail exposure capital requirements}
 \usage{
-retail_capital(pd, lgd, sub_class)
+retail_capital(pd, lgd, sub_class, correlation = NA)
 }
 \arguments{
 \item{pd}{the probability of default expressed as a decimal between 0 and 1
@@ -17,19 +17,27 @@ any applicable floors have already been applied.}
 \item{sub_class}{the sub-class of the retail IRB asset class. Can be one of
 the following: \code{mortgage}, \code{qrr} (qualified revolving retail) and \code{other}
 (e.g. personal lending and small business exposures)}
+
+\item{correlation}{the asset correlation factor. Defaults to 15\%, 4\% and
+the APS prescribed formula (APS 113, Att. C, para. 37) for \code{mortgage},
+\code{qrr} and \code{other} aub-asset classes respectively. These can be overridden by
+supplying a numeric vector with alternate values where the names
+correspond to any of \code{mortgage}, \code{qrr} or \code{other}.}
 }
 \value{
 a vector of capital requirement ratios
 }
 \description{
 This calculates the capital requirements of retail exposures including
-residential mortgages, qualifying revolving retail and SME Retail (other).
-All inputs are vectors and whose values are recycled if necessary.
+residential mortgages, qualifying revolving retail and others. All inputs are
+vectors and whose values are recycled if necessary.
 }
 \examples{
 retail_capital(0.04, 0.20, "mortgage")
 retail_capital(0.04, 0.20, "qrr")
 retail_capital(0.04, 0.20, "other")
+retail_capital(0.04, 0.20, "mortgage", c(mortgage = 0.25))
+retail_capital(0.04, 0.20 , c("mortgage", "qrr"), c(mortgage = 0.25))
 }
 \references{
 \href{https://www.legislation.gov.au/Details/F2012L02329}{APS 113}
