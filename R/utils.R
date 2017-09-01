@@ -7,6 +7,15 @@
   if (is.na(x)) y else x
 }
 
+default_on_na <- function(x, to) {
+  if (length(to) > 1) {
+    x[is.na(x)] <- to[is.na(x)]
+  } else {
+    x[is.na(x)] <- to
+  }
+  x
+}
+
 `%=>%` <- function(from, dictionary) {
   indices <- match(from, names(dictionary))
   unname(dictionary[indices])

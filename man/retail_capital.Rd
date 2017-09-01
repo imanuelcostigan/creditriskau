@@ -15,14 +15,18 @@ corporate and bank exposures (B.2).}
 any applicable floors have already been applied.}
 
 \item{sub_class}{the sub-class of the retail IRB asset class. Can be one of
-the following: \code{mortgage}, \code{qrr} (qualified revolving retail) and \code{other}
-(e.g. personal lending and small business exposures)}
+the following: \code{mortgage} (including small business exposures secured by
+residential mortgage), \code{qrr} (qualified revolving retail) and \code{other} (e.g.
+personal lending and small business exposures not secured by residential
+mortgage)}
 
 \item{correlation}{the asset correlation factor. Defaults to 15\%, 4\% and
 the APS prescribed formula (APS 113, Att. C, para. 37) for \code{mortgage},
-\code{qrr} and \code{other} aub-asset classes respectively. These can be overridden by
-supplying a numeric vector with alternate values where the names
-correspond to any of \code{mortgage}, \code{qrr} or \code{other}.}
+\code{qrr} and \code{other} aub-asset classes respectively. These can be overridden
+by supplying a numeric vector with alternate values and must be the same
+length as \code{sub_class}. The latter is necessary as there is no longer a
+one-to-one mapping of correlation to sub-asset class as a result of
+\href{http://www.apra.gov.au/MediaReleases/Pages/15_19.aspx}{changes announced in July 2015}.}
 }
 \value{
 a vector of capital requirement ratios
@@ -36,8 +40,8 @@ vectors and whose values are recycled if necessary.
 retail_capital(0.04, 0.20, "mortgage")
 retail_capital(0.04, 0.20, "qrr")
 retail_capital(0.04, 0.20, "other")
-retail_capital(0.04, 0.20, "mortgage", c(mortgage = 0.25))
-retail_capital(0.04, 0.20 , c("mortgage", "qrr"), c(mortgage = 0.25))
+retail_capital(0.04, 0.20, "mortgage", 0.25)
+retail_capital(0.04, 0.20 , c("mortgage", "qrr"), c(0.25, NA))
 }
 \references{
 \href{https://www.legislation.gov.au/Details/F2012L02329}{APS 113}
