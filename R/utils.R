@@ -3,10 +3,6 @@
   if (is.null(x)) y else x
 }
 
-`%<>%` <- function(x, y) {
-  if (is.na(x)) y else x
-}
-
 default_on_na <- function(x, to) {
   if (length(to) > 1) {
     x[is.na(x)] <- to[is.na(x)]

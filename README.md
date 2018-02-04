@@ -2,7 +2,9 @@
 creditriskau - Australian credit risk capital tools
 ===================================================
 
-You will be able to calculated credit risk capital related quantities using this package. These reflect the standards outlined in [APRA's credit risk prudential standards](http://www.apra.gov.au/adi/PrudentialFramework/Pages/prudential-standards-and-guidance-notes-for-adis.aspx), and consequently reflects the Australian implementation of the [Basel III capital standards](http://www.bis.org/bcbs/basel3.htm).
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![CRAN status](http://www.r-pkg.org/badges/version/creditriskau)](https://cran.r-project.org/package=creditriskau) [![Appveyor build status](https://ci.appveyor.com/api/projects/status/x45npmpgyqrdk02l/branch/master?svg=true)](https://ci.appveyor.com/project/imanuelcostigan/creditriskau/branch/master) [![Travis build status](https://travis-ci.org/imanuelcostigan/creditriskau.svg?branch=master)](https://travis-ci.org/imanuelcostigan/creditriskau) [![Coverage status](https://codecov.io/gh/imanuelcostigan/creditriskau/branch/master/graph/badge.svg)](https://codecov.io/github/imanuelcostigan/creditriskau?branch=master)
+
+You will be able to calculated credit risk capital related quantities using this package. These reflect the standards outlined in [APRA's credit risk prudential standards](http://www.apra.gov.au/adi/PrudentialFramework/Pages/prudential-standards-and-guidance-notes-for-adis.aspx), and consequently reflects the Australian implementation of the [Basel II](https://www.bis.org/publ/bcbsca.htm) and [Basel III](http://www.bis.org/bcbs/basel3.htm) capital standards.
 
 Retail exposures
 ----------------
@@ -11,15 +13,14 @@ The following illustrates the capital ratios associated with retail exposures wi
 
 ``` r
 library(tidyverse)
-#> Loading tidyverse: ggplot2
-#> Loading tidyverse: tibble
-#> Loading tidyverse: tidyr
-#> Loading tidyverse: readr
-#> Loading tidyverse: purrr
-#> Loading tidyverse: dplyr
-#> Conflicts with tidy packages ----------------------------------------------
-#> filter(): dplyr, stats
-#> lag():    dplyr, stats
+#> ── Attaching packages ─────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+#> ✔ ggplot2 2.2.1     ✔ purrr   0.2.4
+#> ✔ tibble  1.4.2     ✔ dplyr   0.7.4
+#> ✔ tidyr   0.8.0     ✔ stringr 1.2.0
+#> ✔ readr   1.1.1     ✔ forcats 0.2.0
+#> ── Conflicts ────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+#> ✖ dplyr::filter() masks stats::filter()
+#> ✖ dplyr::lag()    masks stats::lag()
 library(creditriskau)
 x <- seq(0.01, 0.99, by = 0.03)
 pd <- rep(x, 3)

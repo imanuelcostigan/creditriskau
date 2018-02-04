@@ -1,0 +1,15 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+sudo: false
+cache: packages
+after_success:
+  - if [[ "${R_CODECOV}" ]]; then R -e 'covr::codecov()'; fi
+matrix:
+  include:
+    - os: linux
+      r: release
+      env: R_CODECOV=true
+    - os: osx
+      r: release
+      osx_image: xcode8.3
