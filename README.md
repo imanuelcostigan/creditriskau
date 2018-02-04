@@ -2,7 +2,7 @@
 creditriskau - Australian credit risk capital tools
 ===================================================
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) [![CRAN status](http://www.r-pkg.org/badges/version/creditriskau)](https://cran.r-project.org/package=creditriskau) [![AppVeyor Build Status](https://ci.appveyor.com/imanuelcostigan/creditriskau)](https://ci.appveyor.com/api/projects/status/x45npmpgyqrdk02l?svg=true) [![Travis build status](https://travis-ci.org/imanuelcostigan/creditriskau.svg?branch=master)](https://travis-ci.org/imanuelcostigan/creditriskau)
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) [![CRAN status](http://www.r-pkg.org/badges/version/creditriskau)](https://cran.r-project.org/package=creditriskau) [![AppVeyor Build Status](https://ci.appveyor.com/project/imanuelcostigan/creditriskau)](https://ci.appveyor.com/api/projects/status/x45npmpgyqrdk02l?svg=true) [![Travis build status](https://travis-ci.org/imanuelcostigan/creditriskau.svg?branch=master)](https://travis-ci.org/imanuelcostigan/creditriskau)
 
 You will be able to calculated credit risk capital related quantities using this package. These reflect the standards outlined in [APRA's credit risk prudential standards](http://www.apra.gov.au/adi/PrudentialFramework/Pages/prudential-standards-and-guidance-notes-for-adis.aspx), and consequently reflects the Australian implementation of the [Basel III capital standards](http://www.bis.org/bcbs/basel3.htm).
 
