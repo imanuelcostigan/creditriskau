@@ -19,3 +19,11 @@ test_that("Retail capital ratios are correct", {
     0.0200529513109492)
 })
 
+
+test_that("Slotting ratios are correct", {
+  expect_equal(slotting_capital("strong"), 0.7 * 0.08)
+  expect_equal(slotting_capital("good"), 0.9 * 0.08)
+  expect_equal(slotting_capital("satisfactory"), 1.15 * 0.08)
+  expect_equal(slotting_capital("weak"), 2.5 * 0.08)
+  expect_equal(slotting_capital("default"), 0)
+})
